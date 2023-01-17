@@ -1,13 +1,20 @@
-.wrapper {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
+// .wrapper {
+//     display: flex;
+//     align-items: center;
+//     flex-direction: column;
+// }
 
 .container {
+    width: 100%;
     display: flex;
-    width: var(--default-layout-width);
-}
-.content {
-    flex: 1;
+    justify-content: center;
+
+    .inner {
+        width: var(--default-layout-width);
+        display: flex;
+
+        .content {
+            flex: 1;
+        }
+    }
 }

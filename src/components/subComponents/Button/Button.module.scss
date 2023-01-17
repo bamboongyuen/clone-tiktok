@@ -1,0 +1,37 @@
+.btn {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    white-space: nowrap;
+    letter-spacing: 1.3px;
+    padding: 7px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+
+    + .btn {
+        margin-left: 10px;
+    }
+}
+.solid {
+    background-color: var(--primary);
+    color: white;
+
+    &:hover {
+        background-color: rgb(197, 37, 99);
+    }
+}
+.white {
+    border: 1px solid #f1f1f2;
+    &:hover {
+        background-color: rgb(241, 255, 255);
+    }
+}
+.disable {
+    opacity: 0.5;
+    background-color: #f1f1f2;
+    cursor: default;
+    &:hover {
+        background-color: #f1f1f2;
+    }
+}
