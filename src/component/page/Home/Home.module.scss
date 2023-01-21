@@ -1,4 +1,5 @@
 .wrapper {
-    height: 1300px;
-    background-color: aliceblue;
+    max-width: min(700px, 60vw);
+    margin: auto;
+    padding: 20px 0;
 }

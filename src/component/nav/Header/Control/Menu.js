@@ -1,11 +1,12 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAnglesLeft } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 import { useState } from 'react';
-import TippyWrap from '../TippyWrap';
-import styles from './Control.module.scss';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
+import TippyWrap from '~/component/other/TippyWrap';
+import styles from './Control.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -38,7 +39,7 @@ function Menu({ menu = [], children }) {
                             className={cx('header-icon')}
                             onClick={handleBack}
                         >
-                            <FontAwesomeIcon icon={faArrowLeft} />
+                            <FontAwesomeIcon icon={faAnglesLeft} />
                         </span>
                         <span className={cx('header-name')}>
                             {current[0].group}

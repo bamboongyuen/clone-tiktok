@@ -1,33 +1,17 @@
-import {
-    faClose,
-    faSearch,
-    faSpinner,
-} from '@fortawesome/free-solid-svg-icons';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faClose, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 import { useEffect, useRef, useState } from 'react';
-import TippyWrap from '../TippyWrap';
-import styles from './Search.module.scss';
-import AccountList from '~/component/other/AccountList';
+
 import useDebounce from '~/hooks/useDebounce';
+import TippyWrap from '~/component/other/TippyWrap';
+import AccountList from '~/component/other/AccountList';
+import styles from './Search.module.scss';
 
 const cx = classNames.bind(styles);
 
-const list = [
-    {
-        id: 168,
-        to: '/follow',
-        full_name: 'student Website',
-        nickname: 'truongsonpt80',
-        avatar: 'https://files.fullstack.edu.vn/f8-tiktok/users/168/63369821b1a38.jpg',
-        bio: '✨ 1998 ✨\r\nVietnam 🇻🇳\r\nĐỪNG LẤY VIDEO CỦA TÔI ĐI SO SÁNH NỮA. XIN HÃY TÔN TRỌNG !',
-        tick: false,
-        followings_count: 11,
-        followers_count: 3,
-        likes_count: 2,
-    },
-];
 function Search() {
     console.log('render search');
     const [input, setInput] = useState('');

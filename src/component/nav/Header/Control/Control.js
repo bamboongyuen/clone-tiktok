@@ -4,11 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import classNames from 'classnames/bind';
-import Button from '../Button';
-import Image from '../Image';
+import PropTypes from 'prop-types';
+
+import Button from '~/component/other/Button';
+import Image from '~/component/other/Image';
 import styles from './Control.module.scss';
 import Menu from './Menu';
-import PropTypes from 'prop-types';
 
 const cx = classNames.bind(styles);
 
@@ -35,7 +36,7 @@ function Control({ menu, infor = '', avatar = '' }) {
                 </>
             ) : (
                 <>
-                    <Button css="outline-red">Upload</Button>
+                    <Button css="outline">Upload</Button>
                     <Button>Login</Button>
                 </>
             )}

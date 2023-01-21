@@ -1,15 +1,16 @@
-import styles from './Home.module.scss';
+import styles from './Live.module.scss';
 import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
-function Home({ children }) {
-    console.log('render home');
+
+function Live() {
+    console.log('render Live');
 
     return (
         <div className={cx('wrapper')}>
-            <h3>home</h3>
+            <h3>Live</h3>
         </div>
     );
 }
 
-export default Home;
+export default Live;

@@ -1,0 +1,30 @@
+.container {
+    padding: 10px 20px;
+}
+.banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.header {
+    display: flex;
+}
+.tick {
+    color: aqua;
+    margin-left: 10px;
+}
+.line {
+    color: #aaaa;
+    margin: 10px 0;
+}
+.number {
+    font-size: 2rem;
+    ~ .number {
+        margin-left: 10px;
+    }
+}
+.infor {
+    font-size: 1.2rem;
+    color: var(-text-gray-2);
+}

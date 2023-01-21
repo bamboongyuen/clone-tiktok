@@ -1,0 +1,39 @@
+.container {
+    padding: 10px 0 10px 10px;
+    background-color: #eeeeee22;
+    border-radius: 20px;
+    display: flex;
+    position: relative;
+    + .container {
+        margin-top: 20px;
+    }
+}
+.icon {
+}
+.button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+.title {
+}
+.tick {
+    color: aqua;
+    margin-left: 10px;
+}
+.text,
+.title {
+    max-width: min(450px, 40vw);
+}
+.view {
+    display: flex;
+}
+.video {
+}
+.infor {
+}

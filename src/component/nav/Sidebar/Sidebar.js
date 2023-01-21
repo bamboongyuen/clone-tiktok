@@ -9,26 +9,7 @@ import {
 import NavItem from './NavItem';
 import Button from '~/component/other/Button';
 import Suggest from './Suggest';
-
-const list = [
-    'Giới thiệu',
-    'Bảng tin',
-    'Liên hệ',
-    'Sự nghiệp',
-    'ByteDance',
-    'Tiktok',
-    'Quảng cáo',
-    'Developer',
-    'Transparency',
-    'Tiktok Rewards',
-    'Tiktok Embeds',
-    'Tiktok Browse',
-    'Trợ giúp',
-    'An toàn',
-    'Điều khoản',
-    'Quyền riêng tư',
-    'Hướng dẫn cộng đồng',
-];
+import { list } from '~/config/list';
 
 const cx = classNames.bind(styles);
 
