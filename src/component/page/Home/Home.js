@@ -2,6 +2,7 @@ import styles from './Home.module.scss';
 import classNames from 'classnames/bind';
 import Post from './Post';
 import { useEffect, useState } from 'react';
+import { searchUser } from '~/service/searchUser';
 
 const cx = classNames.bind(styles);
 
@@ -10,18 +11,15 @@ function Home() {
     const [posts, setPosts] = useState([]);
     useEffect(() => {
         let hot = 'so';
-        fetch(
-            `https://tiktok.fullstack.edu.vn/api/users/search?q=${hot.trim()}&type=more`,
-        )
-            .then((res) => res.json())
-            .then((data) => {
-                if (data.data.length) {
-                    setPosts(data.data);
-                } else {
-                    setPosts([]);
-                }
-            })
-            .catch((e) => console.log(e));
+        const fet = async () => {
+            let data = await searchUser(hot, 'more');
+            if (data.data.length) {
+                setPosts(data.data);
+            } else {
+                setPosts([]);
+            }
+        };
+        fet();
     }, []);
 
     return (

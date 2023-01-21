@@ -33,7 +33,7 @@ function Post({ data }) {
             <div className={cx('content')}>
                 <h3 className={cx('title')}>
                     {data.nickname}{' '}
-                    {!data.tick && (
+                    {data.tick && (
                         <FontAwesomeIcon
                             className={cx('tick')}
                             icon={faCheckCircle}
@@ -44,7 +44,7 @@ function Post({ data }) {
                 <p className={cx('text')}>{data.bio}</p>
                 <p className={cx('text')}>{data.avatar}</p>
                 <div className={cx('view')}>
-                    <video className={cx('video')} />
+                    <video className={cx('video')} controls src=""></video>
                     <div className={cx('infor')}>
                         <Infor icon={faHeart} value={data.likes_count} />
                         <Infor

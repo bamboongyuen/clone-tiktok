@@ -9,6 +9,7 @@ import useDebounce from '~/hooks/useDebounce';
 import TippyWrap from '~/component/other/TippyWrap';
 import AccountList from '~/component/other/AccountList';
 import styles from './Search.module.scss';
+import { searchUser } from '~/service/searchUser';
 
 const cx = classNames.bind(styles);
 
@@ -44,21 +45,30 @@ function Search() {
             return;
         }
         setIsLoading(true);
-        fetch(
-            `https://tiktok.fullstack.edu.vn/api/users/search?q=${input.trim()}&type=less`,
-        )
-            .then((res) => res.json())
-            .then((data) => {
-                if (data.data.length) {
-                    setResult(data.data);
-                    setIsView(true);
-                } else {
-                    setResult([]);
-                }
-            })
-            .catch((e) => console.log(e));
-
-        setIsLoading(false);
+        const fet = async () => {
+            let data = await searchUser(input);
+            if (data.data.length) {
+                setResult(data.data);
+                setIsView(true);
+            } else {
+                setResult([]);
+            }
+            setIsLoading(false);
+        };
+        fet();
+        // fetch(
+        //     `https://tiktok.fullstack.edu.vn/api/users/search?q=${input.trim()}&type=less`,
+        // )
+        //     .then((res) => res.json())
+        //     .then((data) => {
+        //         if (data.data.length) {
+        //             setResult(data.data);
+        //             setIsView(true);
+        //         } else {
+        //             setResult([]);
+        //         }
+        //     })
+        //     .catch((e) => console.log(e));
     }, [inputDebounce]);
     return (
         <div>
