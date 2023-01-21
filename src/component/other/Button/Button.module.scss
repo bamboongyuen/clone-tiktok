@@ -1,0 +1,106 @@
+.btn {
+    min-width: 100px;
+    padding: 6px 10px;
+    font-size: 1.6rem;
+    color: white;
+    border-color: transparent;
+    border-radius: 5px;
+    background-color: var(--active-color);
+    cursor: pointer;
+
+    + .btn {
+        margin-left: 10px;
+    }
+
+    .title {
+    }
+    .leftIcon {
+    }
+    .rightIcon {
+    }
+}
+
+.outline {
+    color: var(--text-gray);
+    border: 1px solid var(--text-gray-2);
+    background-color: white;
+    &:hover {
+        background-color: var(--bg-btn-gray);
+    }
+    .title {
+    }
+    .leftIcon {
+    }
+    .rightIcon {
+    }
+}
+
+.outline-red {
+    color: var(--active-color);
+    border: 1px solid var(--active-color);
+    background-color: white;
+    &:hover {
+        background-color: #ed48530c;
+    }
+    .title {
+    }
+    .leftIcon {
+    }
+    .rightIcon {
+    }
+}
+
+.link {
+    color: var(--text-gray-2);
+    background-color: transparent;
+    border: none;
+    font-size: 1.3rem;
+    text-align: left;
+    min-width: auto;
+    + .link {
+        margin-left: 0;
+    }
+    &:hover {
+        text-decoration: underline;
+    }
+    .title {
+    }
+    .leftIcon {
+    }
+    .rightIcon {
+    }
+}
+.trend {
+    color: var(--text-gray-2);
+    background-color: transparent;
+    padding: 2px 10px;
+    border: 0.5px solid var(--text-gray-2);
+    border-radius: 30px;
+    font-size: 1.3rem;
+    text-align: left;
+    min-width: auto;
+    margin-right: 10px;
+    margin-top: 10px;
+
+    + .trend {
+        margin-left: 0;
+    }
+    &:hover {
+        background-color: #eeeeee;
+    }
+    .title {
+    }
+    .leftIcon {
+    }
+    .rightIcon {
+    }
+}
+
+.btn {
+    .title {
+    }
+    .leftIcon {
+    }
+    .rightIcon {
+    }
+}

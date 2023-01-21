@@ -1,0 +1,24 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.header {
+    z-index: 10;
+    border-bottom: 1.5px solid var(--bg-btn-gray);
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.container {
+    width: min(var(--mainlayout-width), 100vw);
+    position: relative;
+    margin: 0 auto;
+    margin-top: var(--mainlayout-height);
+}
+.sidebar {
+    position: fixed;
+}
+.page {
+    margin-left: min(var(--sidebar-width), 50vw);
+    z-index: 1;
+}

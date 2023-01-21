@@ -1,0 +1,59 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-btn-gray);
+    border-radius: 50px;
+    border: 1px solid transparent;
+    color: var(--text-gray-2);
+    min-width: 350px;
+
+    &:focus-within {
+        border-color: #dddddd;
+    }
+}
+.input {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    padding: 10px 18px;
+    font-size: 1.8rem;
+    color: var(--text-gray);
+}
+.clear,
+.spinner {
+    margin-right: 5px;
+    &:hover {
+        color: #333333;
+    }
+}
+.spinner {
+    animation: spin linear 2s infinite;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+.search {
+    padding: 12px 18px;
+    font-size: 1.8rem;
+    border-radius: 0 50px 50px 0;
+    position: relative;
+
+    &:hover {
+        background-color: #dfdfdf;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 0px;
+        height: 30px;
+        width: 1px;
+        background-color: #aaa;
+    }
+}
+.hide {
+    display: none;
+}

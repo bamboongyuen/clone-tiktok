@@ -1,0 +1,13 @@
+.wrapper {
+    height: var(--mainlayout-height);
+    width: min(var(--mainlayout-width), 100vw);
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.logo {
+    height: var(--mainlayout-height);
+}

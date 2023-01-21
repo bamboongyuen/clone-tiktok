@@ -1,0 +1,33 @@
+.wrapper {
+}
+.title {
+    color: var(--text-gray);
+    font-size: 1.6rem;
+    line-height: 2;
+    margin-left: 8px;
+}
+.item {
+    display: flex;
+    padding: 8px;
+    &:hover {
+        background-color: #eeeeee;
+    }
+}
+.container {
+    margin-left: 10px;
+}
+.header {
+    display: flex;
+}
+.nickname {
+    line-height: 1.5;
+}
+.tick {
+    color: aqua;
+    margin-left: 8px;
+}
+.fullname {
+    color: var(--text-gray-2);
+    font-size: 1.3rem;
+    font-weight: lighter;
+}

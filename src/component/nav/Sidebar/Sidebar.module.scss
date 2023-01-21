@@ -1,0 +1,43 @@
+.wrapper {
+    max-width: min(var(--sidebar-width), 50vw);
+    height: 90vh;
+    overflow-y: scroll;
+    padding: 10px 0px;
+    background-color: white;
+}
+
+.nav {
+    display: block;
+    cursor: pointer;
+    padding: 12px 0px;
+    border-radius: 2px;
+
+    &:hover {
+        background-color: var(--bg-btn-gray);
+    }
+    .icon {
+        font-size: 2rem;
+        width: 30px;
+        margin-right: 10px;
+    }
+    .title {
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+}
+.active {
+    color: var(--active-color);
+}
+
+.text {
+    font-size: 1.4rem;
+    letter-spacing: 1.4px;
+    line-height: 1.8;
+    color: var(--text-gray-2);
+    margin-bottom: 10px;
+}
+.title {
+    font-size: 1.6rem;
+    color: var(--text-gray-2);
+    margin-bottom: 10px;
+}

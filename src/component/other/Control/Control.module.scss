@@ -1,0 +1,44 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+.icon {
+    font-size: 2rem;
+    padding: 0 6px;
+    color: var(--text-gray);
+}
+.menu {
+    padding: 0 10px;
+}
+.header {
+    padding: 4px 20px;
+    font-size: 1.8rem;
+    line-height: 2;
+    position: relative;
+}
+.header-icon {
+}
+.header-name {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.list {
+    max-height: 80vh;
+    overflow-y: scroll;
+}
+.item {
+    padding: 5px 20px;
+    font-size: 1.8rem;
+    line-height: 2;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #eeeeee;
+    }
+}
+.item-icon {
+}
+.title {
+    margin-left: 10px;
+}

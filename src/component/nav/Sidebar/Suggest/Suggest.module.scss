@@ -1,0 +1,6 @@
+.container {
+    width: 100%;
+    + .container {
+        border-bottom: 1px solid var(--bg-btn-gray);
+    }
+}

@@ -1,0 +1,67 @@
+.wrapper {
+    --size: 160px;
+    --dot: calc(var(--size) / 2);
+    --dot-outline: calc(var(--size) / 5.5);
+    --color: white;
+    --color-invert: black;
+
+    max-width: min(500px, 50vw);
+    background-color: rgba(74, 237, 131, 0.052);
+    padding: 50px;
+    text-align: center;
+    margin: auto;
+    border-radius: 30px;
+}
+.title {
+    font-size: 4rem;
+}
+.box {
+    position: relative;
+    height: var(--size);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50px;
+}
+.loader {
+    display: inline-block;
+    height: var(--size);
+    width: var(--size);
+    background-color: var(--color);
+    border-color: var(--color-invert);
+    border-style: solid;
+    border-width: 0px 0px var(--dot) 0px;
+    box-sizing: border-box;
+    border-radius: 100%;
+    position: relative;
+    animation: spin 10s linear infinite;
+
+    &::before {
+        position: absolute;
+        content: '';
+        height: var(--dot);
+        width: var(--dot);
+        background-color: var(--color);
+        border: var(--dot-outline) solid var(--color-invert);
+        border-radius: 100%;
+        box-sizing: border-box;
+        top: 50%;
+        left: 50%;
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        height: var(--dot);
+        width: var(--dot);
+        background-color: var(--color-invert);
+        border: var(--dot-outline) solid var(--color);
+        border-radius: 100%;
+        box-sizing: border-box;
+        top: 50%;
+        left: 0;
+    }
+}
+@keyframes spin {
+    from {
+        transform: rotate(360deg);
+    }
+}
