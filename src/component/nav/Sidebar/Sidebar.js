@@ -1,3 +1,4 @@
+import { memo, useContext } from 'react';
 import styles from './Sidebar.module.scss';
 import classNames from 'classnames/bind';
 import Box from './Box';
@@ -10,15 +11,21 @@ import NavItem from './NavItem';
 import Button from '~/component/other/Button';
 import Suggest from './Suggest';
 import { list } from '~/config/list';
+import { AppContext } from '~/App';
 
 const cx = classNames.bind(styles);
 
-function Sidebar({}) {
+function Sidebar() {
     //nav
     //login
     //account
     //discovery
     //infor
+    const [isAuth, setIsAuth] = useContext(AppContext).auth;
+
+    const handleClick = () => {
+        setIsAuth(!isAuth);
+    };
 
     return (
         <div className={cx('wrapper')}>
@@ -32,7 +39,9 @@ function Sidebar({}) {
                     Đăng nhập để follow các tác giả, thích video và xem bình
                     luận.
                 </p>
-                <Button css={'outline-red'}>Login</Button>
+                <Button css={'outline-red'} onClick={handleClick}>
+                    Login
+                </Button>
             </Box>
             <Box>
                 <Suggest sub={'te'} title={'Suggest account'} />
@@ -60,4 +69,4 @@ function Sidebar({}) {
     );
 }
 
-export default Sidebar;
+export default memo(Sidebar);

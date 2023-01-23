@@ -56,8 +56,10 @@ export const publicMenu = [
 ];
 
 export const privateMenu = [
-    { icon: <FontAwesomeIcon icon={faFootball} />, title: 'Theo dõi' },
-    { icon: <FontAwesomeIcon icon={faHammer} />, title: 'Cài đặt' },
-    { icon: <FontAwesomeIcon icon={faCommentDots} />, title: 'Tin nhắn' },
-    ...publicMenu,
+    [
+        { icon: <FontAwesomeIcon icon={faFootball} />, title: 'Theo dõi' },
+        { icon: <FontAwesomeIcon icon={faHammer} />, title: 'Cài đặt' },
+        { icon: <FontAwesomeIcon icon={faCommentDots} />, title: 'Tin nhắn' },
+        ...publicMenu[0],
+    ],
 ];

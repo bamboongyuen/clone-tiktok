@@ -18,7 +18,7 @@ function Image(
     const [fallback, setFallback] = useState('');
 
     const handleError = () => {
-        console.log('img cant find');
+        // console.log('img cant find');
         setFallback(customesFallback);
     };
     return (

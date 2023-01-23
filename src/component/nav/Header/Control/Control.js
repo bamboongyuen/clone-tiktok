@@ -5,15 +5,26 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
+import { useContext } from 'react';
 
 import Button from '~/component/other/Button';
 import Image from '~/component/other/Image';
 import styles from './Control.module.scss';
+import { AppContext } from '~/App';
 import Menu from './Menu';
 
 const cx = classNames.bind(styles);
 
-function Control({ menu, infor = '', avatar = '' }) {
+function Control({ infor = '', avatar = '' }) {
+    const [profile, setProfile] = useContext(AppContext).profile;
+
+    const handleClick = () => {
+        if (profile.id) {
+            setProfile({});
+        } else {
+            setProfile({ id: 1, nickname: 'npc', detail: 'i do nothing!' });
+        }
+    };
     return (
         <div className={cx('wrapper')}>
             {infor ? (
@@ -37,11 +48,11 @@ function Control({ menu, infor = '', avatar = '' }) {
             ) : (
                 <>
                     <Button css="outline">Upload</Button>
-                    <Button>Login</Button>
+                    <Button onClick={handleClick}>Login</Button>
                 </>
             )}
             <div className={cx('menu')}>
-                <Menu menu={menu}>
+                <Menu>
                     {infor ? (
                         <Image src={avatar} css="avatar" />
                     ) : (

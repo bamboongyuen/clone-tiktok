@@ -2,17 +2,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesLeft } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import TippyWrap from '~/component/other/TippyWrap';
 import styles from './Control.module.scss';
+import { publicMenu, privateMenu } from '~/config/menu';
+import { AppContext } from '~/App';
 
 const cx = classNames.bind(styles);
 
-function Menu({ menu = [], children }) {
+function Menu({ children }) {
     console.log('render menu');
-    const [list, setList] = useState(menu);
+    const [list, setList] = useState(publicMenu);
+    const [profile] = useContext(AppContext).profile;
+
+    useEffect(() => {
+        profile.id ? setList(privateMenu) : setList(publicMenu);
+    }, [profile]);
 
     const handleClick = (item) => {
         if (item.children) {

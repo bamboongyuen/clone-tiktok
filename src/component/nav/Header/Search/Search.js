@@ -3,7 +3,7 @@ import { faClose, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, memo } from 'react';
 
 import useDebounce from '~/hooks/useDebounce';
 import TippyWrap from '~/component/other/TippyWrap';
@@ -40,19 +40,22 @@ function Search() {
         );
     };
     useEffect(() => {
-        if (!input.trim()) {
+        if (!inputDebounce.trim()) {
             setResult([]);
             return;
         }
         setIsLoading(true);
         const fet = async () => {
-            let data = await searchUser(input);
-            if (data.data.length) {
-                setResult(data.data);
-                setIsView(true);
-            } else {
-                setResult([]);
-            }
+            try {
+                let data = await searchUser(inputDebounce);
+                console.log(data);
+                if (data.data.length) {
+                    setResult(data.data);
+                    setIsView(true);
+                } else {
+                    setResult([]);
+                }
+            } catch (error) {}
             setIsLoading(false);
         };
         fet();
@@ -114,4 +117,4 @@ function Search() {
     );
 }
 
-export default Search;
+export default memo(Search);

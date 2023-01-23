@@ -16,7 +16,7 @@ function Suggest({ sub, title }) {
             }
         };
         fet();
-    }, []);
+    }, [sub]);
 
     return <AccountList title={title} list={list} />;
 }

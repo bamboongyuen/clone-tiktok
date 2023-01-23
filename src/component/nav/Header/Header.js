@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import classNames from 'classnames/bind';
 
 import Image from '~/component/other/Image';
@@ -5,7 +6,6 @@ import images from '~/asset/img';
 import Control from './Control';
 import Search from './Search';
 import styles from './Header.module.scss';
-import { publicMenu, privateMenu } from '~/config/menu';
 
 const cx = classNames.bind(styles);
 
@@ -15,9 +15,9 @@ function Header() {
         <div className={cx('wrapper')}>
             <Image className={cx('logo')} src={images.logo} />
             <Search />
-            <Control menu={publicMenu} />
+            <Control />
         </div>
     );
 }
 
-export default Header;
+export default memo(Header);

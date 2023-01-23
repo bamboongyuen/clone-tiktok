@@ -1,0 +1,29 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+//input
+.input-group {
+    margin: 5px 0;
+    padding: 5px;
+    border: 0.5px solid #aaaa;
+    border-radius: 5px;
+    .title,
+    .infor {
+        display: inline-block;
+    }
+    .input {
+        display: block;
+        margin-top: 6px;
+        padding: 0 10px;
+        border-radius: 3px;
+        border: 0.5px solid #aaa;
+        line-height: 2;
+    }
+    .infor {
+        color: red;
+        font-size: 1.3rem;
+        margin-left: 10px;
+    }
+}

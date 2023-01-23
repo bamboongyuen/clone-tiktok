@@ -1,7 +1,7 @@
 import styles from './Home.module.scss';
 import classNames from 'classnames/bind';
 import Post from './Post';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, memo } from 'react';
 import { searchUser } from '~/service/searchUser';
 
 const cx = classNames.bind(styles);
@@ -31,4 +31,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default memo(Home);
